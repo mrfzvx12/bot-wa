@@ -52,6 +52,11 @@ class MessageCollector extends EventEmitter {
     async messageHandler({ messages, type }) {
         const message = messages[0]
         if (type !== 'notify') return
+        if (type === 'stickerMessage') return;
+        if (type === 'imageMessage') return;
+        if (type === 'videoMessage') return;
+        if (type === 'audioMessage') return;
+        if (type === 'documentMessage') return;
         if (message.key && message.key.remoteJid === 'status@broadcast') return
         if (!message.message) return
 
