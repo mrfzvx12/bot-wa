@@ -38,5 +38,6 @@ module.exports = {
           content: preview 
         }]
       })
+      msg.reply('Done')
     },
 }
